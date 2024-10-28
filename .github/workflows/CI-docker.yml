@@ -1,4 +1,4 @@
-name: Docker CI
+name: Docker Build CI
 
 on:
   push:
@@ -7,14 +7,16 @@ on:
     paths-ignore:
       - '**.md'
       - LICENSE
+
   workflow_dispatch:
 
 jobs:
   docker:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -28,7 +30,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: .
           platforms: linux/amd64, linux/arm64
           push: true
-          tags: lychee0/finalrip-dashboard:latest
+          tags: lychee0/finalrip-dashboard:dev
