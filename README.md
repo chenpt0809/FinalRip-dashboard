@@ -1,6 +1,8 @@
 # FinalRip-dashboard
 
-[![CI](https://github.com/TensoRaws/FinalRip-dashboard/actions/workflows/CI.yml/badge.svg)](https://github.com/TensoRaws/FinalRip-dashboard/actions/workflows/CI.yml) [![Docker CI](https://github.com/TensoRaws/FinalRip-dashboard/actions/workflows/Docker-CI.yml/badge.svg)](https://github.com/TensoRaws/FinalRip-dashboard/actions/workflows/Docker-CI.yml)
+[![CI](https://github.com/TensoRaws/FinalRip-dashboard/actions/workflows/CI.yml/badge.svg)](https://github.com/TensoRaws/FinalRip-dashboard/actions/workflows/CI.yml)
+[![Docker Build CI](https://github.com/TensoRaws/FinalRip-dashboard/actions/workflows/CI-docker.yml/badge.svg)](https://github.com/TensoRaws/FinalRip-dashboard/actions/workflows/CI-docker.yml)
+[![Release](https://github.com/TensoRaws/FinalRip-dashboard/actions/workflows/Release.yml/badge.svg)](https://github.com/TensoRaws/FinalRip-dashboard/actions/workflows/Release.yml)
 
 a simple dashboard for FinalRip
 
