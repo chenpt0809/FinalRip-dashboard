@@ -34,6 +34,7 @@ export const useSettingStore = defineStore(
         '\n',
     )
     const encodeParam = ref('ffmpeg -i - -vcodec libx265 -crf 16')
+    const sliceMode = ref(true)
 
     // list setting
     const checkedPendingBox = ref(false)
@@ -51,6 +52,7 @@ export const useSettingStore = defineStore(
       githubToken,
       script,
       encodeParam,
+      sliceMode,
       checkedPendingBox,
       checkedRunningBox,
       checkedCompletedBox,
@@ -70,6 +72,7 @@ export const useSettingStore = defineStore(
         'githubToken',
         'script',
         'encodeParam',
+        'sliceMode',
         'checkedPendingBox',
         'checkedRunningBox',
         'checkedCompletedBox',

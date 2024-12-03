@@ -3,7 +3,7 @@ import { storeToRefs } from 'pinia'
 
 import { useSettingStore } from '@/store/setting'
 
-const { apiURL, apiToken, templateRepo, githubToken } = storeToRefs(useSettingStore())
+const { apiURL, apiToken, templateRepo, githubToken, sliceMode } = storeToRefs(useSettingStore())
 </script>
 
 <template>
@@ -47,6 +47,9 @@ const { apiURL, apiToken, templateRepo, githubToken } = storeToRefs(useSettingSt
           placeholder="TensoRaws/vs-playground"
         />
       </NSpace>
+    </NCard>
+    <NCard hoverable title="Cut Video into clips" size="small">
+      <NSwitch v-model:value="sliceMode" size="large" />
     </NCard>
   </NSpace>
 </template>
