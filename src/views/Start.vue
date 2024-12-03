@@ -9,13 +9,11 @@ import { ClearTask, GetTaskList, StartTask } from '@/api'
 import { useSettingStore } from '@/store/setting'
 import { renderIconButton } from '@/util/render'
 
-const { script, encodeParam } = storeToRefs(useSettingStore())
+const { script, encodeParam, sliceMode } = storeToRefs(useSettingStore())
 
 const notification = useNotification()
 const dialog = useDialog()
 const message = useMessage()
-
-const sliceEnabled = ref(false) 
 
 interface pendingTask {
   key: string
@@ -115,7 +113,7 @@ function submitTasks(taskKeys: DataTableRowKey[]): void {
           encode_param: encodeParam.value,
           script: script.value,
           video_key: key.toString(),
-          slice: sliceEnabled.value,
+          slice: sliceMode.value,
         })
           .then((res) => {
             if (res.success) {
@@ -207,14 +205,6 @@ function deleteTasks(taskKeys: DataTableRowKey[]): void {
       <NSpace justify="space-between">
         <NGradientText size="18" type="warning"> Pending </NGradientText>
         <NSpace>
-          <n-switch v-model:value="sliceEnabled" size="large">
-            <template #checked>
-              On Slicing
-            </template>
-            <template #unchecked>
-              Off Slicing
-            </template>
-            </n-switch>
           <NButton type="error" @click="deleteTasks(checkedRowKeys)"> Delete </NButton>
           <NButton type="primary" @click="submitTasks(checkedRowKeys)"> RUN </NButton>
         </NSpace>
